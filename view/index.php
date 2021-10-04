@@ -12,6 +12,8 @@
 
     <!-- <div class="container-fluid" -->
 
+    <img src="../image/logo-veville.png" alt="Notre logo." style="display: block; margin-left: auto; margin-right: auto;">
+
     <h1 class='text-center'>Acceuil</h1>
 
     <h2 class='text-center'>Bienvenue à bord</h2>

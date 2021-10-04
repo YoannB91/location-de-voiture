@@ -8,6 +8,8 @@
 
 <main>
 
+    <img src="../image/logo-veville.png" alt="Notre logo." style="display: block; margin-left: auto; margin-right: auto;">
+
     <h1 class='text-center'>Commande</h1>
 
     <div class="table-responsive">

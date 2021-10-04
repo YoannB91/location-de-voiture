@@ -8,6 +8,8 @@
 
 <main>
 
+    <img src="../image/logo-veville.png" alt="Notre logo." style="display: block; margin-left: auto; margin-right: auto;">
+
     <h1 class='text-center'>Membre</h1>
 
     <form method="POST" class="row mx-2 g-3">
