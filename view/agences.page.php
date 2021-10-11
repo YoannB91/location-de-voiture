@@ -6,10 +6,6 @@
 
 <?php require_once('../layout/navbar.inc.php'); ?>
 
-<main>
-
-    <img src="../image/logo-veville.png" alt="Notre logo." style="display: block; margin-left: auto; margin-right: auto;">
-
     <h1 class='text-center'>Agences</h1>
 
     <form method="POST" class="row mx-2 g-3">
@@ -76,7 +72,14 @@
                 <td><?= $agence['cp']; ?></td>
                 <td><?= $agence['description']; ?></td>
                 <td><img src="<?= $agence['photo']; ?>" alt="Une photo représentant la ville où se situe l'agence." class="img-fluid"></td>
-                <td><i class="fas fa-search px-2 py-2"> </i><i class="fas fa-edit px-2 py-2"> </i><i class="fas fa-trash-alt px-2 py-2"></i></td>
+                <td>
+                <!-- //, Le filtre. -->
+                <i class="fas fa-search px-2 py-2"> </i>
+                <!-- //, La modification. -->
+                <i class="fas fa-edit px-2 py-2"> </i>
+                <!-- //, La suppression. -->
+                <a href="?actionA=deleteAgence&id=<?= $agence['id_agence'] ?>"> <i class="fas fa-trash-alt px-2 py-2"> </i> </a>
+                </td>
             </tr>
 
             <?php endforeach; ?>

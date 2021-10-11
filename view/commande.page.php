@@ -6,10 +6,6 @@
 
 <?php require_once ('../layout/navbar.inc.php'); ?>
 
-<main>
-
-    <img src="../image/logo-veville.png" alt="Notre logo." style="display: block; margin-left: auto; margin-right: auto;">
-
     <h1 class='text-center'>Commande</h1>
 
     <div class="table-responsive">
@@ -40,7 +36,14 @@
                 <td><?= $commande['date_heure_fin']; ?></td>
                 <td><?= $commande['prix_total']; ?> €</td>
                 <td><?= $commande['date_enregistrement']; ?></td>
-                <td><i class="fas fa-search px-2 py-2"> </i><i class="fas fa-edit px-2 py-2"> </i><i class="fas fa-trash-alt px-2 py-2"></i></td>
+                <td>
+                    <!-- //, Le filtre. -->
+                    <i class="fas fa-search px-2 py-2"> </i>
+                    <!-- //, La modification. -->
+                    <i class="fas fa-edit px-2 py-2"> </i>
+                    <!-- //, La suppression. -->
+                    <a href="?actionC=deleteCommande&id=<?= $commande['id_commande'] ?>"> <i class="fas fa-trash-alt px-2 py-2"> </i> </a>
+                </td>
             </tr>
 
             <?php endforeach; ?>

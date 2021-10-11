@@ -6,10 +6,6 @@
 
 <?php require_once('../layout/navbar.inc.php'); ?>
 
-<main>
-
-    <img src="../image/logo-veville.png" alt="Notre logo." style="display: block; margin-left: auto; margin-right: auto;">
-
     <h1 class='text-center'>Véhicule</h1>
 
     <form method="POST" class="row mx-2 g-3">
@@ -92,7 +88,14 @@
                 <td><?= $vehicule['description']; ?></td>
                 <td> <img src="<?= $vehicule['photo']; ?>" alt="Une photo représentant le véhicule, image non-contractuelle." class="img-fluid"></td>
                 <td><?= $vehicule['prix_journalier']; ?> €</td>
-                <td><i class="fas fa-search px-2 py-2"> </i><i class="fas fa-edit px-2 py-2"> </i><i class="fas fa-trash-alt px-2 py-2"></i></td>
+                <td>
+                    <!-- //, Le filtre. -->
+                    <i class="fas fa-search px-2 py-2"> </i>
+                    <!-- //, La modification. -->
+                    <i class="fas fa-edit px-2 py-2"> </i> 
+                    <!-- //, La suppression. -->
+                    <a href="?actionV=deleteVehicule&id=<?= $vehicule['id_vehicule'] ?>"> <i class="fas fa-trash-alt px-2 py-2"> </i> </a>
+                </td>
             </tr>
 
             <?php endforeach; ?>
