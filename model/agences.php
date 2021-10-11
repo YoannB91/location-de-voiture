@@ -2,24 +2,11 @@
 
 namespace modelAgences;
 
-class Agences {
+require_once('connexion.php');
 
-    private $db;
+use Connexion;
 
-    public function getDb() {
-
-        if(!$this -> db) {
-            try {
-                $this -> db = new \PDO("mysql:host=localhost;dbname=location", "root", "", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING, \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-            }
-
-            catch(\Exception $error) {
-                echo "Probleme de connexion : " . $error -> getMessage();
-            }
-        } 
-
-        return $this -> db;
-    }
+class Agences extends Connexion {
 
     public function getAllAgences() {
         $req = $this -> getDb() -> query("SELECT * 

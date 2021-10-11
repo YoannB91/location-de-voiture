@@ -2,23 +2,11 @@
 
 namespace modelSession;
 
-class Session {
+require_once('connexion.php');
 
-    private $db;
+use Connexion;
 
-    public function getDb() {
-        if(!$this -> db) {
-            try {
-                $this -> db = new \PDO("mysql:host=localhost;dbname=location", "root", "", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING, \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-            }
-
-            catch(\Exception $error) {
-                echo "Probleme de connexion : " . $error -> getMessage();
-            }
-        }
-
-        return ($this -> db);
-    }
+class Session extends Connexion {
 
     public function createSession($values) {
         $req = $this -> getDb() -> prepare("INSERT INTO membre (pseudo, mdp, nom, prenom, email, civilite)

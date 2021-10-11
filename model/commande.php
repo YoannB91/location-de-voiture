@@ -4,24 +4,11 @@ namespace modelCommande;
 
 ini_set('display_errors', 'on');
 
-class Commande {
+require_once('connexion.php');
 
-    private $db;
+use Connexion;
 
-    public function getDb() {
-
-        if(!$this -> db) {
-            try {
-                $this -> db = new \PDO("mysql:host=localhost;dbname=location", "root", "", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING, \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-            }
-
-            catch(\Exception $error) {
-                echo "Probleme de connexion : " . $error -> getMessage();
-            }
-        } 
-
-        return $this -> db;
-    }
+class Commande extends Connexion {
 
     public function getAllAgence() {
         $req = $this -> getDb() -> query("SELECT * 
@@ -44,8 +31,6 @@ class Commande {
     }
 
 
-
-
     public function getAllCommandeMembre() {
 
         $membre = $_SESSION['membre']['id_membre']; 
@@ -62,10 +47,6 @@ class Commande {
     }
 
 
-
-
-
-
     public function createSelection($values) {
         
         $id_agence = $values['id_agence'];
@@ -76,13 +57,6 @@ class Commande {
                                             -> fetchAll(\PDO::FETCH_ASSOC);
         return $req;
     }
-
-
-
-
-
-
-
 
 
     public function createCommande($values) {

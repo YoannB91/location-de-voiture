@@ -30,8 +30,6 @@ class Commande {
     }
 
 
-
-
     public function postSelection($values) {
 
         // var_dump($values);
@@ -40,9 +38,6 @@ class Commande {
         $this -> pdo -> createSelection($values);
         }
     }
-
-
-
 
 
     public function postCommande($values) {
@@ -58,8 +53,6 @@ $arrayAgence = $commande -> showAgence();
 
 $arrayCommandeMembre = $commande -> showCommandeMembre();
 
-
-
 // $arraySelection = $commande -> postSelection($values);
 
 // $arraySelection = $commande -> postSelection($values['id_agence']);
@@ -67,8 +60,5 @@ $arrayCommandeMembre = $commande -> showCommandeMembre();
 // if(isset($_POST['postSelection'])) { $arraySelection = $commande -> postSelection($values);}
 
 // $arraySelection = if(isset ($_POST['postSelection'])) { Commande -> postSelection($values); }
-
-
-
 
 ?>
