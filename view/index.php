@@ -54,10 +54,14 @@
 
                 <?php foreach($arrayVehicule as $vehicule): ?>
 
+                <!-- //* Les photos des véhicules. -->
+
                 <tr>
                     <th scope="row">
                         <img src="<?= $vehicule['photo']; ?>" alt="Une photo représentant le véhicule, image non-contractuelle." class="img-fluid">
                     </th>
+
+                    <!-- //* Les information sur le véhicule. -->
 
                     <td>
                         <?= $vehicule['titre']; ?> <br />
@@ -65,9 +69,15 @@
                         <?= $vehicule['prix_journalier']; ?> € / jour -
                         <?= $vehicule['ville']; ?> <br />
 
+                        <!-- //* Passer la commande. -->
+
+                        <!-- //, Si aucun compte n'est connecté. -->
+
                         <?php if(!isset($_SESSION['membre']) && isset($_POST['postSelection'])) : ?>
 
                             <a class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#sign_up">Réserver et payer</a>
+
+                        <!-- //, Si la personne est connecté, à préciser l'agence de départ et la date. -->
 
                         <?php elseif(isset($_SESSION['membre']) && isset($_POST['postSelection'])) : ?>
 
@@ -88,6 +98,8 @@
                                 <button type="submit" name="postComande" class="btn btn-primary mt-4">Réserver et payer</button>
 
                             </form>
+
+                        <!-- //, Si aucune agence n'a été sélectionner avec une date pour la location. -->
 
                         <?php else : ?>
 

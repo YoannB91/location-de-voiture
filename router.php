@@ -47,8 +47,6 @@ if(isset($_GET['actionV']) == 'deleteVehicule') { $vehicule -> postDeleteVehicul
 //+ Les commandes.
 if(isset($_POST['postComande'])) { $commande -> postCommande($_POST); }  /* print_r($_POST) */
 
-if(isset($_POST['postSelection'])) { $commande -> postSelection($_POST); } /* print_r($_POST) */
-
 
 //§ Supprimer une commande.
 if(isset($_GET['actionC']) == 'deleteCommande') { $commande -> postDeleteCommande($_GET['id']); }
